@@ -1,12 +1,17 @@
 import React from 'react';
-import Counter from "./components/Counter";
 import './index.scss';
-
+import {Link, Route, Routes} from "react-router-dom";
+import AboutPage from "./pages/AboutPage/AboutPage";
+import MainPage from "./pages/MainPage/MainPage";
 const App = () => {
     return (
         <div className="app">
-            asdasdASFASFa
-            <Counter />
+            <Link to={'/about'}>about</Link>
+            <Link to={'/'}>mainPage</Link>
+            <Routes>
+                <Route path={'/about'} element={<AboutPage/>}/>
+                <Route path={'/'} element={<MainPage/>}/>
+            </Routes>
         </div>
     );
 };
